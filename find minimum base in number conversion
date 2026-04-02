@@ -1,0 +1,21 @@
+def convert(m, base):
+    rem = m % base
+    m = m // base
+
+    while m >= base:
+        if m % base != rem:
+            return 0
+        m = m // base
+
+    if m == rem:
+        return 1
+
+
+# Main
+m = int(input())
+base = 2
+
+while convert(m, base) != 1:
+    base += 1
+
+print(base)
